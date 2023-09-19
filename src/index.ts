@@ -1,1 +1,3 @@
-export default 'Hello father 4!';
+import ScanQrCodeH5 from "./scan-qrcode-h5";
+
+export { ScanQrCodeH5 };

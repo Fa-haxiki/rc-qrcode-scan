@@ -1,19 +1,23 @@
 {
   "name": "cjm-scan",
-  "version": "0.0.1",
-  "description": "html orgin qrcode scan",
+  "version": "1.0.0",
+  "description": "html origin qrcode scan",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "prepare": "husky install"
   },
   "keywords": [],
   "authors": [
     "liulunsheng2017@gmail.com"
   ],
+  "engines": {
+    "node": ">=14.20.0"
+  },
   "license": "MIT",
   "files": [
     "dist",
@@ -22,7 +26,24 @@
   "publishConfig": {
     "access": "public"
   },
+  "lint-staged": {
+    "src/**/*.{tsx,ts,css}": "prettier --write --ignore-unknown"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
   "devDependencies": {
-    "father": "^4.3.5"
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "father": "^4.3.5",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.2",
+    "prettier": "3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "html5-qrcode": "^2.3.8"
   }
 }
