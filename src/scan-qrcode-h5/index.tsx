@@ -1,7 +1,7 @@
 import React from "react";
 
 const ScanQrCodeH5 = () => {
-  return <div>aaa</div>;
+  return <div>aaabbb</div>;
 };
 
 export default ScanQrCodeH5;

@@ -9,7 +9,9 @@
     "build": "father build",
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "link": "npm link && cd examples/normal && npm link cjm-scan",
+    "unlink": "npm unlink && cd examples/normal && npm unlink cjm-scan"
   },
   "keywords": [],
   "authors": [
