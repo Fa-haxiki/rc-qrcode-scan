@@ -10,8 +10,9 @@
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build",
     "prepare": "husky install",
-    "link": "npm link && cd examples/normal && npm link cjm-scan",
-    "unlink": "npm unlink && cd examples/normal && npm unlink cjm-scan"
+    "start:examples": "cd examples && npm start",
+    "link": "npm link && cd examples && npm link cjm-scan",
+    "unlink": "npm unlink && cd examples && npm unlink cjm-scan"
   },
   "keywords": [],
   "authors": [
@@ -32,8 +33,8 @@
     "src/**/*.{tsx,ts,css}": "prettier --write --ignore-unknown"
   },
   "peerDependencies": {
-    "react": ">=18.2.0",
-    "react-dom": ">=18.2.0"
+    "react": ">=18.2",
+    "react-dom": ">=18.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.22",
@@ -42,8 +43,7 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
     "prettier": "3.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "sass": "^1.67.0"
   },
   "dependencies": {
     "html5-qrcode": "^2.3.8"

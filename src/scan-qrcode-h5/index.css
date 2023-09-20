@@ -1,0 +1,54 @@
+.cjm-scan-container {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: fixed;
+  top: 200vh;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 9999999;
+}
+
+.cjm-scan-container[data-open="true"] {
+  top: 0;
+  opacity: 1;
+}
+
+.cjm-scan-mask {
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cjm-qrcode-reader {
+  width: 80vw;
+  height: 80vw;
+  background: rgba(0, 0, 0, 0.85);
+  margin-top: 16px;
+}
+
+.cjm-scan-error {
+  margin-top: 16px;
+  color: red;
+  padding: 0 10vw;
+}
+
+.cjm-scan-close {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  margin-top: auto;
+  margin-bottom: 10vw;
+}
+
+.cjm-scan-tips {
+  margin-top: 10vw;
+  color: white;
+}
