@@ -93,7 +93,6 @@ const ScanQrCodeH5 = forwardRef<ScanQrCodeH5Ref, ScanQrCodeH5Props>(
           onFail,
         )
         .catch((err) => {
-          stopScan();
           // 错误信息处理仅供参考，具体情况看输出！！！
           if (typeof err === "string") {
             setError(err);
@@ -113,10 +112,15 @@ const ScanQrCodeH5 = forwardRef<ScanQrCodeH5Ref, ScanQrCodeH5Props>(
     }, []);
 
     const stopScan = useCallback(() => {
-      setOpen(false);
-      html5QrCodeRef.current?.stop().catch((err) => {
-        setError("Unable to stop scanning." + JSON.stringify(err));
-      });
+      html5QrCodeRef.current
+        ?.stop()
+        .then(() => {
+          setOpen(false);
+          html5QrCodeRef.current?.clear();
+        })
+        .catch((err) => {
+          setError("Unable to stop scanning." + JSON.stringify(err));
+        });
     }, []);
 
     const initScan = useCallback(() => {
