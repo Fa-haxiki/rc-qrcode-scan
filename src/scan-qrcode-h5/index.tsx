@@ -112,6 +112,7 @@ const ScanQrCodeH5 = forwardRef<ScanQrCodeH5Ref, ScanQrCodeH5Props>(
     }, []);
 
     const stopScan = useCallback(() => {
+      if (!html5QrCodeRef.current?.isScanning) return;
       html5QrCodeRef.current
         ?.stop()
         .then(() => {
