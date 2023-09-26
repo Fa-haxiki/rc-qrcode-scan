@@ -1,6 +1,6 @@
 {
   "name": "cjm-scan",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "html origin qrcode scan",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -46,6 +46,7 @@
     "sass": "^1.67.0"
   },
   "dependencies": {
+    "globalthis": "^1.0.3",
     "html5-qrcode": "^2.3.8"
   }
 }

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { ScanQrCodeH5 } from "cjm-scan/dist/esm";
+import { ScanQrCodeH5 } from "cjm-scan";
 
 function App() {
   const scanCodeRef = useRef();

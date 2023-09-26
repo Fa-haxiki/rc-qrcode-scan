@@ -35,6 +35,7 @@
   margin-top: 16px;
   color: red;
   padding: 0 10vw;
+  font-size: 14px;
 }
 
 .cjm-scan-close {
@@ -47,9 +48,11 @@
   margin-top: auto;
   margin-bottom: 10vw;
   color: #333;
+  font-size: 14px;
 }
 
 .cjm-scan-tips {
   margin-top: 10vw;
   color: white;
+  font-size: 14px;
 }
