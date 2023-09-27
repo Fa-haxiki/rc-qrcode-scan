@@ -23,9 +23,7 @@ jobs:
           npm install
           npm run build
 
-      - name: 'Publish to the npm registry'
-        uses: primer/publish@3.0.0
+      - name: Publish to the npm registry
+        run: npm publish 
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        with:
-          default_branch: 'main'
