@@ -5,6 +5,7 @@ import React, {
   useCallback,
   forwardRef,
   useImperativeHandle,
+  ChangeEventHandler,
 } from "react";
 import {
   Html5Qrcode,
@@ -113,12 +114,14 @@ const ScanQrCodeH5 = forwardRef<ScanQrCodeH5Ref, ScanQrCodeH5Props>(
 
     const stopScan = useCallback(() => {
       if (!html5QrCodeRef.current?.isScanning) {
+        setError("");
         setOpen(false);
         return;
       }
       html5QrCodeRef.current
         ?.stop()
         .then(() => {
+          setError("");
           setOpen(false);
           html5QrCodeRef.current?.clear();
         })
@@ -146,15 +149,63 @@ const ScanQrCodeH5 = forwardRef<ScanQrCodeH5Ref, ScanQrCodeH5Props>(
       stopScan();
     }, []);
 
+    const scanFile = useCallback((file: File) => {
+      html5QrCodeRef.current
+        ?.scanFileV2(file, false)
+        .then((res) => {
+          onSuccess(res.decodedText, res);
+        })
+        .catch(() => {
+          setError("扫不到码，请重试");
+          startScan();
+        });
+    }, []);
+
+    const onPhotoChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+      (e) => {
+        if (!e.target.files?.length) {
+          return;
+        }
+        const file = e.target.files[0];
+        if (html5QrCodeRef.current?.isScanning) {
+          html5QrCodeRef.current
+            ?.stop()
+            .then(() => {
+              html5QrCodeRef.current?.clear();
+              scanFile(file);
+            })
+            .catch((err) => {
+              setError("无法停止扫码，请刷新页面重试。" + JSON.stringify(err));
+            });
+        } else {
+          scanFile(file);
+        }
+      },
+      [],
+    );
+
     return (
       <div className="cjm-scan-container" data-open={open}>
         <div className="cjm-scan-mask">
           <div className="cjm-scan-tips">{scanTips}</div>
           <div id="cjm-qrcode-reader" className="cjm-qrcode-reader" />
           <p className="cjm-scan-error">{error}</p>
-          <button className="cjm-scan-close" onClick={closeScan}>
-            关闭
-          </button>
+          <div className="cjm-actions">
+            <div className="cjm-scan-close" onClick={closeScan}>
+              关闭
+            </div>
+            <label htmlFor="cjm-photos-input">
+              <div className="cjm-scan-photos">相册</div>
+            </label>
+            <input
+              id="cjm-photos-input"
+              name="cjm-photos-input"
+              type="file"
+              accept="image/*"
+              style={{ display: "none" }}
+              onChange={onPhotoChange}
+            />
+          </div>
         </div>
       </div>
     );
