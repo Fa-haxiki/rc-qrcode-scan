@@ -1,6 +1,6 @@
 {
   "name": "rc-qrcode-scan",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react qrcode scan component",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",

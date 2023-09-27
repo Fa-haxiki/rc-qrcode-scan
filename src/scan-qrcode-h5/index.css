@@ -38,15 +38,25 @@
   font-size: 14px;
 }
 
-.cjm-scan-close {
+.cjm-actions {
+  margin-top: auto;
+  margin-bottom: 10vw;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cjm-scan-close,
+.cjm-scan-photos {
   width: 50px;
   height: 50px;
   border-radius: 50px;
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.85);
-  margin-top: auto;
-  margin-bottom: 10vw;
   color: #333;
   font-size: 14px;
 }
