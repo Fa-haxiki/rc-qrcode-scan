@@ -51,7 +51,7 @@ function App() {
 
 ## 预览/Preview
 
-![demo.gif](screenshot%2Fdemo.gif)
+![demo.gif](https://raw.githubusercontent.com/Fa-haxiki/rc-qrcode-scan/main/screenshot/demo.gif)
 
 
 ## 开发/Development

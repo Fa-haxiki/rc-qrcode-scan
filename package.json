@@ -24,11 +24,14 @@
   "license": "MIT",
   "files": [
     "dist",
-    "compiled",
-    "screenshot"
+    "compiled"
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fa-haxiki/rc-qrcode-scan"
   },
   "lint-staged": {
     "src/**/*.{tsx,ts,css}": "prettier --write --ignore-unknown"
