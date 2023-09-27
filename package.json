@@ -1,7 +1,7 @@
 {
-  "name": "cjm-scan",
+  "name": "rc-qrcode-scan",
   "version": "1.0.3",
-  "description": "html origin qrcode scan",
+  "description": "react qrcode scan component",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "scripts": {
@@ -24,7 +24,8 @@
   "license": "MIT",
   "files": [
     "dist",
-    "compiled"
+    "compiled",
+    "screenshot"
   ],
   "publishConfig": {
     "access": "public"

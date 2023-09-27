@@ -1,6 +1,6 @@
-# cjm-scan 二维码扫描器
+# rc-qrcode-scan React二维码扫描器
 
-## 使用
+## 使用/Usage
 
 ```bash
 $ npm install cjm-scan
@@ -49,12 +49,12 @@ function App() {
 |  stopScan | 关闭扫描 |
 |  getError | 获取错误信息 |
 
-## 预览
+## 预览/Preview
 
-![chrome-capture-2023-8-21.gif](screenshot%2Fchrome-capture-2023-8-21.gif)
+![demo.gif](screenshot%2Fdemo.gif)
 
 
-## 开发
+## 开发/Development
 
 > Node >= 14.20.0
 
