@@ -1,4 +1,4 @@
-name: Public Npm
+name: Publish NPM Package
 
 on:
   push:
