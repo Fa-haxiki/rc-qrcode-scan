@@ -59,6 +59,9 @@
   background: rgba(255, 255, 255, 0.85);
   color: #333;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cjm-scan-tips {
